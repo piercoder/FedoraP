@@ -1,0 +1,27 @@
+#!/bin/bash
+
+#======================================================================#
+#	 __     ___  __      __   __   __   ___  __
+#	|__) | |__  |__)    /  ` /  \ |  \ |__  |__)
+#	|    | |___ |  \    \__, \__/ |__/ |___ |  \
+#
+#	dmenu cycle menu
+#======================================================================#
+
+
+# Colors
+color1="#fe8019"
+color2="#282828"
+
+# Style
+lines="50"
+font="FontAwesome-13"
+
+# Theme
+theme="-l $lines -nf $color1 -nb $color2 -sb $color1 -sf $color2 -fn $font"
+
+class=$(i3-msg -t get_tree | \
+	egrep -o "(class\":\".[^\"]+)" | \
+    sed '/i3bar/d;s/class":"//g' | dmenu -i -p "Jump to an application ▶" $theme) 
+    
+i3-msg [class="$class"] focus 2>/dev/null

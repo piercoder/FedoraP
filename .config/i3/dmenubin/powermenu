@@ -1,0 +1,35 @@
+#!/bin/bash
+
+#======================================================================#
+#	 __     ___  __      __   __   __   ___  __
+#	|__) | |__  |__)    /  ` /  \ |  \ |__  |__)
+#	|    | |___ |  \    \__, \__/ |__/ |___ |  \
+#
+#	dmenu power menu
+#======================================================================#
+
+# Colors
+color1="#fe8019"
+color2="#282828"
+
+# Style
+lines="50"
+font="FontAwesome-13"
+
+# Theme
+theme="-l $lines -nf $color1 -nb $color2 -sb $color1 -sf $color2 -fn $font"
+
+# Menu entries
+o1="    Logout"
+o2="    Reboot"
+o3="    Poweroff" 
+
+# Power-off menu
+OPT=$(echo -e "$o1\n$o2\n$o3" | dmenu -i -p "Power menu ▶" $theme )
+
+case $OPT in
+	$o1) i3-msg exit ;;
+	$o2) systemctl reboot ;;
+	$o3) systemctl poweroff ;;
+	*) ;;
+esac

@@ -1,0 +1,20 @@
+#!/bin/bash
+
+#======================================================================#
+#	 __     ___  __      __   __   __   ___  __
+#	|__) | |__  |__)    /  ` /  \ |  \ |__  |__)
+#	|    | |___ |  \    \__, \__/ |__/ |___ |  \
+#
+#	Make a screenshot of the current screen, blur it and lock the screen
+#	From https://github.com/endeavouros-team/endeavouros-i3wm-setup/tree/main/.config/i3
+#======================================================================#
+
+PICTURE=/tmp/i3lock.png
+SCREENSHOT="flameshot screen -p $PICTURE"
+
+BLUR="5x4"
+
+$SCREENSHOT
+convert $PICTURE -blur $BLUR $PICTURE
+i3lock -i $PICTURE
+rm $PICTURE
