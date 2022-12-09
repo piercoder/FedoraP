@@ -15,10 +15,10 @@
 set $mod Mod4
 
 # Colors (accent, dark, light, urgent)
-set $color1 #fe8019 
+set $color1 #d79921 
 set $color2 #282828 
 set $color3 #ebdbb2
-set $color4 #fb4934
+set $color4 #cc241d
 #======================================================================#
 
 
