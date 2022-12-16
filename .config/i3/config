@@ -39,7 +39,7 @@ exec --no-startup-id picom --config ~/.config/.picom.conf
 # Window colors
 # class					border bground text indicator child_border
 client.focused			$color1 $color1 $color2 $color1 $color1
-client.focused_inactive $color1 $color1 $color2 $color1 $color1
+client.focused_inactive $color2 $color2 $color3 $color2 $color2
 client.unfocused 		$color2 $color2 $color3 $color2 $color2
 client.urgent 			$color4 $color4 $color2 $color4 $color4
 client.placeholder 		$color2 $color2 $color3 $color2 $color2
