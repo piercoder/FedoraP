@@ -51,6 +51,16 @@ title_align center
 # No title bar
 default_border pixel 3
 default_floating_border pixel 3
+
+# Configure 10px of space between windows and to the screen edges.
+gaps inner 10px
+
+# Configure an additional 10px of extra space to the screen edges,
+# for a total gap of 20px to the screen edges, and 10px between windows.
+gaps outer 10px
+
+# Only enable outer gaps when there is exactly one window or split container on the workspace.
+smart_gaps inverse_outer
 #======================================================================#
 
 
